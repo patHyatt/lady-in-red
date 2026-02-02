@@ -37,8 +37,8 @@ export default {
 		return new Response(html, {
 			headers: {
 				"content-type": "text/html;charset=UTF-8",
-				'X-API-NAME": "carmen-sandiego",
-				'X-API-VERSION": "1.2"
+				"X-API-NAME": "carmen-sandiego",
+				"X-API-VERSION": "1.2"
 			},
 		});
 	},
