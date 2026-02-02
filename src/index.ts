@@ -26,7 +26,7 @@ export default {
 			};
 
 			console.log('Colors', flag.colors);
-			console.log('Country', flag.name);
+			console.log('Country', flag.country.name);
 		</script>
       </head>
       <body>
