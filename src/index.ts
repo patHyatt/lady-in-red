@@ -18,12 +18,19 @@ export default {
 
 		let html = `<!DOCTYPE html>
       <head>
-        <title> Geolocation: Hello World </title>
+        <title> What's up doc </title>
         <style> ${html_style} </style>
+		<script>
+			const flag = { 
+				colors: ['orange', 'white', 'green']
+			};
+
+			console.log('Colors', flag.colors);
+			console.log('Country', flag.name);
+		</script>
       </head>
       <body>
-        <h1>Geolocation: Hello World!</h1>
-        <p>You now have access to geolocation data about where your user is visiting from.</p>
+        <h1>Are you Carmen Sandiego</h1>
         ${html_content}
       </body>`;
 
