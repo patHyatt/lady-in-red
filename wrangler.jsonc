@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "where-in-the-world",
+	"name": "lady-in-red",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-04-03",
 	"observability": {
