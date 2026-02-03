@@ -2,7 +2,7 @@ export default {
 	async fetch(request): Promise<Response> {
 		let html_content = "";
 		let html_style =
-			"body{padding:6em; font-family: sans-serif;} h1{color:#a62b2b;}";
+			"body{padding:1em; font-family: sans-serif;} h1{color:#a62b2b;}";
 
 		html_content += "<p> Country: " + request.cf.country + "</p>";
 		html_content += "<p> City: " + request.cf.city + "</p>";
