@@ -113,6 +113,20 @@ export default {
 			}
 		`;
 
+		// Helper function to escape HTML to prevent XSS
+		const escapeHtml = (text: string | number | undefined): string => {
+			if (text === undefined || text === null) return '';
+			const str = String(text);
+			const map: { [key: string]: string } = {
+				'&': '&amp;',
+				'<': '&lt;',
+				'>': '&gt;',
+				'"': '&quot;',
+				"'": '&#039;'
+			};
+			return str.replace(/[&<>"']/g, (m) => map[m]);
+		};
+
 		const dataFields = [
 			{ label: "Colo", value: request.cf.colo },
 			{ label: "Country", value: request.cf.country },
@@ -128,10 +142,12 @@ export default {
 		];
 
 		dataFields.forEach(field => {
+			const escapedLabel = escapeHtml(field.label);
+			const escapedValue = escapeHtml(field.value);
 			html_content += `
-				<div class="info-section" onclick="copyToClipboard('${field.label}', '${field.value}')">
-					<div class="info-label">${field.label}</div>
-					<div class="info-value">${field.value}</div>
+				<div class="info-section" data-label="${escapedLabel}" data-value="${escapedValue}">
+					<div class="info-label">${escapedLabel}</div>
+					<div class="info-value">${escapedValue}</div>
 				</div>
 			`;
 		});
@@ -156,6 +172,20 @@ export default {
           };
 
           console.log('Colors', flag.colors);
+
+          // Use event delegation to handle clicks on info sections
+          document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(event) {
+              const section = event.target.closest('.info-section');
+              if (section) {
+                const label = section.getAttribute('data-label');
+                const value = section.getAttribute('data-value');
+                if (label && value) {
+                  copyToClipboard(label, value);
+                }
+              }
+            });
+          });
 
           function copyToClipboard(label, value) {
             const text = label + ': ' + value;
