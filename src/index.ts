@@ -51,16 +51,17 @@ export default {
         <title> Where in the world </title>
         <style> ${html_style} </style>
 		<script>
+			fetch('/location')
+				.then(res => res.json())
+				.then(data => console.log('Location:', data));
+		</script>
+		<script>
 			const flag = { 
 				colors: ['orange', 'white', 'green']
 			};
 
 			console.log('Colors', flag.colors);
 			console.log('Country', flag.country.name);
-
-			fetch('/location')
-				.then(res => res.json())
-				.then(data => console.log('Location:', data));
 		</script>
       </head>
       <body>
