@@ -53,13 +53,15 @@ export default {
 						'<p> RegionCode: ' + data.regionCode + '</p>' +
 						'<p> Timezone: ' + data.timezone + '</p>' +
 						'<p> Colo: ' + data.colo + '</p>';
-					console.log('Flag Name:', data.flag.name);
+					document.getElementById('flag-data').innerHTML =
+						'<p> Flag Name: ' + data.flag.name + '</p>';
 				});
 		</script>
       </head>
       <body>
         <h1>Are you Carmen Sandiego</h1>
         <div id="location-data"></div>
+        <div id="flag-data"></div>
       </body>`;
 
 		return new Response(html, {

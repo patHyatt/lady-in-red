@@ -13,6 +13,7 @@ describe('worker', () => {
 		const text = await response.text();
 		expect(text).toContain("fetch('/location')");
 		expect(text).toContain('id="location-data"');
+		expect(text).toContain('id="flag-data"');
 		expect(text).toContain('data.flag.name');
 	});
 
