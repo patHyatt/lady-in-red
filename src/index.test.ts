@@ -12,6 +12,9 @@ describe('worker', () => {
 
 		const text = await response.text();
 		expect(text).toContain("fetch('/location')");
+		expect(text).toContain('id="location-data"');
+		expect(text).toContain('id="flag-data"');
+		expect(text).toContain('data.flag.name');
 	});
 
 	it('GET /location returns JSON with X-API-NAME and X-API-VERSION headers', async () => {
