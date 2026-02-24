@@ -42,17 +42,10 @@ export default {
 				.then(res => res.json())
 				.then(data => {
 					document.getElementById('location-data').innerHTML =
-						'<p> Country: ' + data.country + '</p>' +
-						'<p> City: ' + data.city + '</p>' +
-						'<p> Region: ' + data.region + '</p>' +
-						'<p> Continent: ' + data.continent + '</p>' +
-						'<p> Latitude: ' + data.latitude + '</p>' +
-						'<p> Longitude: ' + data.longitude + '</p>' +
-						'<p> PostalCode: ' + data.postalCode + '</p>' +
-						'<p> MetroCode: ' + data.metroCode + '</p>' +
-						'<p> RegionCode: ' + data.regionCode + '</p>' +
-						'<p> Timezone: ' + data.timezone + '</p>' +
-						'<p> Colo: ' + data.colo + '</p>';
+						'<p>' + data.country + ', ' + data.continent + '</p>' +
+						'<p>' + data.city + ', ' + data.region + ', ' + data.postalCode + '</p>' +
+						'<p>' + data.latitude + ', ' + data.longitude + '</p>' +
+						'<p>' + data.timezone + '</p>';
 					document.getElementById('flag-data').innerHTML =
 						'<p> Flag Name: ' + data.flag.name + '</p>';
 				});
