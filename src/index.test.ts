@@ -12,6 +12,8 @@ describe('worker', () => {
 
 		const text = await response.text();
 		expect(text).toContain("fetch('/location')");
+		expect(text).toContain('<svg');
+		expect(text).toContain('aria-label="Location pin"');
 	});
 
 	it('GET /location returns JSON with X-API-NAME and X-API-VERSION headers', async () => {
