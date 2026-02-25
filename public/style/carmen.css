@@ -1,0 +1,13 @@
+body {
+  padding: 1em;
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  background-image: url(/img/carmen.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  min-height: 100vh;
+}
+h1 {
+  color: #a62b2b;
+}
